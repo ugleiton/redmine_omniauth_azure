@@ -1,7 +1,9 @@
 ## Redmine omniauth azure
-
+---------------------------------------------------------------------------------------
 ### This plugin is for redmine 5.1.2
 
+install manual : https://blog.tsuchinokometal.com/2020/01/06/post-362/
+---------------------------------------------------------------------------------------
 This plugin is used to authenticate in redmine through Azure.
 It was more than inspired by redmine_omniauth_google see https://github.com/twinslash/redmine_omniauth_google and redmine_omniauth_github see https://github.com/ares/redmine_omniauth_github
 
