@@ -1,5 +1,5 @@
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 
 gem 'oauth2'
-gem 'json'
 gem 'jwt'
+

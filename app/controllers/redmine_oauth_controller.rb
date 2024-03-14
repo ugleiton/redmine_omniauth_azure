@@ -1,10 +1,11 @@
-require 'account_controller'
-require 'json'
-require 'jwt'
+# require 'account_controller'
+# require 'json'
+# require 'jwt'
 
 class RedmineOauthController < AccountController
   include Helpers::MailHelper
   include Helpers::Checker
+  
   def oauth_azure
     if Setting.plugin_redmine_omniauth_azure['azure_oauth_authentication']
       session['back_url'] = params['back_url']
