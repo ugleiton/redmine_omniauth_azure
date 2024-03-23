@@ -12,7 +12,7 @@ It was more than inspired by redmine_omniauth_google see https://github.com/twin
 Choose folder /plugins, make command
 
 ```console
-git clone https://github.com/Gucin/redmine_omniauth_azure.git
+git clone https://github.com/kimjyb/redmine_omniauth_azure.git
 ```
 ![image](https://github.com/kimjyb/redmine_omniauth_azure/assets/13270512/832393ad-fb38-4682-9838-8dc947116106)
 ![image](https://github.com/kimjyb/redmine_omniauth_azure/assets/13270512/a724b3bd-56de-478c-a874-5ef979b99e4d)
