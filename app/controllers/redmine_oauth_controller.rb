@@ -32,6 +32,7 @@ class RedmineOauthController < AccountController
       logger.error user_info
       
       email = user_info.first['unique_name']
+	    email = email.split('#').last
 
       if email
         checked_try_to_login email, user_info.first
