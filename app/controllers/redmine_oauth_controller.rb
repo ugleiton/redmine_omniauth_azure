@@ -9,7 +9,11 @@ class RedmineOauthController < AccountController
   def oauth_azure
     if Setting.plugin_redmine_omniauth_azure['azure_oauth_authentication']
       session['back_url'] = params['back_url']
-      redirect_to oauth_client.auth_code.authorize_url(:redirect_uri => oauth_azure_callback_url, :scope => scopes)
+      
+      # Substitui http por https se necessário
+      callback_url = ensure_https(oauth_azure_callback_url)
+      
+      redirect_to oauth_client.auth_code.authorize_url(redirect_uri: callback_url, scope: scopes)
     else
       password_authentication
     end
@@ -20,7 +24,10 @@ class RedmineOauthController < AccountController
       flash['error'] = l(:notice_access_denied)
       redirect_to signin_path
     else
-      token = oauth_client.auth_code.get_token(params['code'], :redirect_uri => oauth_azure_callback_url, :resource => "00000002-0000-0000-c000-000000000000")
+      # Substitui http por https se necessário
+      callback_url = ensure_https(oauth_azure_callback_url)
+      
+      token = oauth_client.auth_code.get_token(params['code'], redirect_uri: callback_url, resource: "00000002-0000-0000-c000-000000000000")
       user_info = JWT.decode(token.token, nil, false)
       logger.error user_info
       
@@ -34,7 +41,7 @@ class RedmineOauthController < AccountController
       end
     end
   end
-
+  
   def checked_try_to_login(email, user)
     if allowed_domain_for?(email)
       try_to_login email, user
@@ -102,4 +109,11 @@ class RedmineOauthController < AccountController
   def scopes
     'user:email'
   end
+  
+  def ensure_https(url)
+    uri = URI(url)
+    uri.scheme = 'https' if uri.scheme == 'http'
+    uri.to_s
+  end
+  
 end
