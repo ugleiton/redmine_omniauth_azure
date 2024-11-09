@@ -24,7 +24,7 @@ Nome: redmine-app
 Tipos de conta compatíveis: Locatário único
 URI de redirecionamento: https://${seu_url_redmine}/oauth2callback_azure
 ```
-*`Registrar`
+* `Registrar`
 * No aplicativo recém-criado `redmine-app`, vá para `Certificados e segredos`
 * Na guia `Segredos do cliente`, clique em `Novo segredo do cliente`
 ```
