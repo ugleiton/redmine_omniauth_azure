@@ -66,6 +66,6 @@ Faça login como Administrador do Redmine
 
 ## Processo de Login
 
-Quando um usuário acessa a página de login e clica em `Nicrosoft Login`, o plugin o redireciona para a página de login do Azure, onde ele deve se autenticar. Após o login bem-sucedido, o usuário será redirecionado de volta para o Redmine.
+Quando um usuário acessa a página de login e clica em `Microsoft Login`, o plugin o redireciona para a página de login do Azure, onde ele deve se autenticar. Após o login bem-sucedido, o usuário será redirecionado de volta para o Redmine.
 
 Caso o registro automático não esteja ativado, um administrador deverá criar uma conta para novos usuários.
