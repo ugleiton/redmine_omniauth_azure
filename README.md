@@ -4,6 +4,13 @@ Este é um fork de https://github.com/kimjyb/redmine_omniauth_azure.
 
 O repositorio a seguir tambem foi utilizado como referência [ibboost/redmine_omniauth_azure](https://github.com/ibboost/redmine_omniauth_azure).
 
+## Requisitos
+
+* Gem oauth2
+* Gem json
+
+Caso esteja utilizando docker utilize a seguinte imagem docker customizada por mim com as dependências já instaladas `registry.gitlab.com/ugleiton-docker/redmine:5.1.2-oauth2`
+
 ## Instalação
 
 * Certifique-se de executar esses comandos como o `usuário` que roda o `redmine` para que as permissões estejam corretas.
